@@ -9,7 +9,9 @@ export default function (url, routers) {
                     return {
                         path: route.path,
                         methods: route.methods,
-                        function: _.get(route, 'stack[0].name', '')
+                        function: _.get(router, 'stack', []).map(stack => {
+                            return stack.name;
+                        }).filter(name => name)
                     };
                 })
             });

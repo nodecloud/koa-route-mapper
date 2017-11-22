@@ -15,6 +15,33 @@ const router = new KoaRouter();
 app.use(KoaMapper('/mappers', [router]));
 ```
 
+When visit the /mappers api, it will response:
+
+```json
+[
+  {
+    "path": "/v1/groups/",
+    "methods": [
+      "HEAD",
+      "GET"
+    ],
+    "function": [
+      "getGroups"
+    ]
+  },
+  {
+    "path": "/v1/groups/:groupId/members",
+    "methods": [
+      "HEAD",
+      "GET"
+    ],
+    "function": [
+      "getGroupMembers"
+    ]
+  }
+]
+```
+
 ## API
 
 ### KoaMapper(url, routers)
