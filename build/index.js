@@ -14,7 +14,7 @@ exports.default = function (url, routers) {
                         return {
                             path: route.path,
                             methods: route.methods,
-                            function: _lodash2.default.get(router, 'stack', []).map(function (stack) {
+                            function: _lodash2.default.get(route, 'stack', []).map(function (stack) {
                                 return stack.name;
                             }).filter(function (name) {
                                 return name;

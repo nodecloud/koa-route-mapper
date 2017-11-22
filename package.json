@@ -1,6 +1,6 @@
 {
   "name": "koa-route-mapper",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "koa route mapper middleware.",
   "main": "build/index.js",
   "scripts": {
