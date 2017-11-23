@@ -10,7 +10,7 @@ exports.default = function (url, routers) {
             if (url === ctx.url) {
                 let results = [];
                 routers.forEach(function (router) {
-                    results = _lodash2.default.get(router, 'stack', []).map(function (route) {
+                    results = results.concat(_lodash2.default.get(router, 'stack', []).map(function (route) {
                         return {
                             path: route.path,
                             methods: route.methods,
@@ -20,7 +20,7 @@ exports.default = function (url, routers) {
                                 return name;
                             })
                         };
-                    });
+                    }));
                 });
                 ctx.body = results;
             }

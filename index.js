@@ -5,7 +5,7 @@ export default function (url, routers) {
         if (url === ctx.url) {
             let results = [];
             routers.forEach(router => {
-                results = _.get(router, 'stack', []).map(route => {
+                results = results.concat(_.get(router, 'stack', []).map(route => {
                     return {
                         path: route.path,
                         methods: route.methods,
@@ -13,7 +13,7 @@ export default function (url, routers) {
                             return stack.name;
                         }).filter(name => name)
                     };
-                })
+                }));
             });
             ctx.body = results;
         }
